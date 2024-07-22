@@ -4,5 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   validates :phone_number, numericality: true, presence: true, length: { is: 10 }
-  has_many :posts
+  validates :email, uniqueness: true
+  has_many :posts, dependent: :destroy
 end
