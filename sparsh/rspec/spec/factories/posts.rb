@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :post do
-    title { "MyString" }
-    body { "MyText" }
-    user { "paudelbibhushan@gmail.com" }
+    title { Faker::Movie.title }
+    body { Faker::Lorem.paragraph }
+    user
   end
 end
