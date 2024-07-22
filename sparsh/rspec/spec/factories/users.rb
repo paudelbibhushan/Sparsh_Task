@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :user do
-    factory :random_user, class: User do
-      name { Faker::Name.unique.name }
-      phone_number{ Faker::Number.within(range: 10..10) }
-    end
+    full_name { Faker::Name.unique.name }
+    phone_number { Faker::Number.number(digits: 10) }
+    email { Faker::Internet.email }
+    password { :'12345678' }
   end
 end
